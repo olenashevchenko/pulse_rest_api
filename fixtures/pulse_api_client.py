@@ -16,3 +16,11 @@ class PulseRestAPI():
 
     def get_objects(self):
         pass
+
+    def modify_object(self):
+        pass
+
+    def delete_object(self, obj):
+        obj_id = obj.id
+        response = requests.delete(self.url + str(obj_id) + "/")
+        return response
