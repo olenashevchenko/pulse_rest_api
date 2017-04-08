@@ -9,7 +9,8 @@ class PulseRestAPI():
     def create_object(self, obj):
         obj_data = obj.get_dict_without_id()
         response = requests.post(self.url, data=obj_data)
-        obj.set_id(response.json()["id"])
+        if response.status_code == 201:
+            obj.set_id(response.json()["id"])
         return response
 
 
