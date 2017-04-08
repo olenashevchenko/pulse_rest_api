@@ -7,7 +7,7 @@ class Book:
     def set_id(self, id):
         self.id = id
 
-    def get_dict(self):
+    def get_dict_without_id(self):
         return {"title":self.title, "author":self.author}
 
     def get_dict_with_id(self):
